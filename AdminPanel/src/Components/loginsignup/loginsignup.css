@@ -1,0 +1,151 @@
+body{
+    background:black ;
+}
+.text {
+    font-size: 48px;
+    font-weight: 600;
+    color: rgb(233, 224, 221);
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 10px; /* Added some space below the text */
+    
+}
+
+.underline {
+    width: 61px;
+    height: 6px;
+    border-radius: 9px;
+    margin: 0 auto; /* Center the underline */
+}
+
+.containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the container */
+    margin-top: 200px;
+    //padding: 12%;
+}
+
+.inputs {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 400px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 6px;
+}
+
+.input img {
+    margin: 0px 20px;
+}
+
+.input input {
+    height: 50px;
+    width: 300px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(155, 41, 47);
+    font-size: 15px;
+}
+
+#submit {
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: grey;
+    border: none;
+    border-radius: 15px; 
+}
+#submit:hover {
+    background-color: rgb(9, 9, 9);
+}
+
+.forgot-pwd {
+    padding-left: 60px;
+    margin-top: 25px;
+    color: rgb(118, 111, 111);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center; /* Center the forgot password text */
+}
+
+.forgot-pwd span {
+    cursor: pointer;
+    color: rgb(251, 251, 251);
+}
+
+.submit-container {
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    color: black;
+    background-color: azure;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.disable {
+    background-color: grey;
+    color: lightgray;
+}
+
+.login {
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: grey;
+    border: none;
+    border-radius: 15px;
+}
+
+.login:hover {
+    background-color: rgb(9, 9, 9);
+}
+
+.signup {
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: grey;
+    border: none;
+    border-radius: 15px;
+}
+
+.signup:hover {
+    background-color: rgb(9, 9, 9);
+}
+
+
+

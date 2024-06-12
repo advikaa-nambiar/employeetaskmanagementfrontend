@@ -1,10 +1,9 @@
 import React from 'react';
 import { BsJustify, BsPersonCircle, BsSearch } from 'react-icons/bs';
 
-
 function Header({ OpenSidebar }) {
   return (
-    <header className='header'>
+    <header className='headerContainer'>
       <div className='menu-icon'>
         <BsJustify className='icon' onClick={OpenSidebar} />
       </div>
@@ -19,4 +18,4 @@ function Header({ OpenSidebar }) {
   );
 }
 
-export default Header;
+export default Header

@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={handleSidebarToggle} />
+      {/* <div>hi this is sidebar</div> */}
       <div className={`main-content ${openSidebarToggle ? 'sidebar-open' : ''}`}>
         <Header OpenSidebar={handleSidebarToggle} />
         {children}
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
 export default Layout;
 
 /*
+
 import React, { useState } from 'react';
 import Sidebar from '../Pages/Sidebar'; // En
 import Header from '../Pages/Header'; // Ensu

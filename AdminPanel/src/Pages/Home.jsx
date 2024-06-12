@@ -1,8 +1,10 @@
-// Home.jsx
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { BsPerson, BsFillArchiveFill, BsFillGrid3X3GapFill, BsFillBellFill } from 'react-icons/bs';
-//import Layout from '../Components/Layout'; 
+import Layout from '../Components/Layout'; 
+import { Routes } from 'react-router-dom';
+
+
 
 const Home = () => {
   const data = [
@@ -15,7 +17,7 @@ const Home = () => {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
   return (
-    //<Layout>
+    <Layout>
       <main className='main-container'>
         <div className='main-title'>
           <h3>DASHBOARD</h3>
@@ -64,10 +66,18 @@ const Home = () => {
               <Legend />
             </PieChart>
           </ResponsiveContainer>
-        </div>
+          </div>
       </main>
-    //</Layout>
+    </Layout>
   );
 };
 
-export default Home;
+export default Home
+
+
+
+/*
+ <Routes>
+            <Route path="/myprojects" element={<MyProject />} />
+          </Routes>
+          */

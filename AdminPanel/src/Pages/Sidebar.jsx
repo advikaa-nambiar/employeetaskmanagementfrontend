@@ -1,10 +1,9 @@
-// Sidebar.jsx
 import React from 'react';
 import { BsHouse, BsPerson, BsFillArchiveFill, BsFillGrid3X3GapFill, BsFillBellFill, BsMenuButtonWideFill } from 'react-icons/bs';
 
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
   return (
-    <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""}>
+    <aside id="sidebarContainer" className={openSidebarToggle ? "sidebar-responsive" : ""}>
       <div className='sidebar-title'>
         <div className='sidebar-brand'>
           <BsHouse className='icon_header' /> DASHBOARD
@@ -37,4 +36,4 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
   );
 }
 
-export default Sidebar;
+export default Sidebar

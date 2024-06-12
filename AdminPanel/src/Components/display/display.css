@@ -1,0 +1,10 @@
+.display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  

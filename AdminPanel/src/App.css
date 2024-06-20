@@ -1,374 +1,9 @@
-/*body {
-  margin: 0;
-  padding: 0;
-  background-color: #000000;
-  color: #e9e9ec;
-  font-family: 'Times New Roman', Times, serif;
-  
-  
-}
-
-.icon {
-  vertical-align: middle;
-  line-height: 1px;
-  font-size: 25px;
-}
-.icon_header {
-  vertical-align: middle;
-  line-height: 1px;
-  font-size: 26px;
-}
-.icon, .icon_header {
-  margin-right: 10px;
-}
-
-.close_icon {
-  color: rgb(188, 31, 31);
-  margin-left: 30px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 3fr;
-  grid-template-areas:
-    'sidebar header header header'
-    'sidebar main main main';
-  height: 100vh;
-}
-
-/* Header  
-.header {
-  grid-area: header;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px 0 30px;
-  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
-}
-
-.header-left input{
-  height: 40px;
-  width: 400px;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  color: white;
-
-}
-
-.menu-icon {
-  display: none;
-}
-/* End Header  */
-
-/* Sidebar  
-#sidebarContainer {
-  grid-area: sidebar;
-  height: 100%;
-  background-color: #e9e9e9;
-  overflow-y: auto;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-}
-
-
-.sidebar-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px 0px 30px;
-  margin-bottom: 30px;
-}
-
-.sidebar-title > span {
-  display: none;
-}
-
-.sidebar-brand {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.sidebar-list {
-  padding: 0;
-  list-style-type: none;
-}
-
-.sidebar-list-item {
-  padding: 20px 20px 20px 20px;
-  font-size: 18px;
-}
-
-.sidebar-list-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-}
-
-.sidebar-list-item > a {
-  text-decoration: none;
-  color: #ececec;
-}
-
-.sidebar-responsive {
-  /* display: inline !important; 
-  display: flex !important;
-  position: absolute;
-  /*
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  
-  z-index: 12 !important;
-}
-
-/* End Sidebar  
-
-
-/* Main  * 
-.main-container {
-  grid-area: main;
-  overflow-y: auto;
-  padding: 20px 20px;
-  color: rgba(228, 222, 222, 0.95);
-}
-
-.main-title {
-  display: flex;
-  justify-content: space-between;
-}
-
-.main-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
-  margin: 15px 0;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 8px 15px;
-  border-radius: 5px;
-}
-/*
-.card:first-child {
-  background-color: rgb(207, 103, 29);
-}
-
-.card:nth-child(2) {
-  background-color: #b16416;
-}
-
-.card:nth-child(3) {
-  background-color: #c34f19;
-}
-
-.card:nth-child(4) {
-  background-color: #a6270e;
-}
-
-.card-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card-inner > .card_icon {
-  font-size: 25px;
-}
-
-
-
-.card:first-child {
-  background-color: #2962ff;
-}
-
-.card:nth-child(2) {
-  background-color: #ff6d00;
-}
-
-.card:nth-child(3) {
-  background-color: #2e7d32;
-}
-
-.card:nth-child(4) {
-  background-color: #d50000;
-}
-
-.card-inner {
-  display: grid;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card-inner > .card_icon {
-  font-size: 25px;
-}
-
-.charts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 60px;
-  height: 300px;
-}
-
-/* End Main  */
-
-
-/* Medium <= 992px 
-  
-@media screen and (max-width: 992px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      'header'
-      'main';
-  }
-
-  #sidebarContainer {
-    display: none;
-  }
-
-  
-  
-  
-
-  .menu-icon {
-    display: inline;
-  }
-
-  .sidebar-title > span {
-    display: inline;
-  }
-}
-
-  
-@media screen and (max-width: 768px) {
-  .main-cards {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 0;
-  }
-
-  .charts {
-    grid-template-columns: fr;
-    margin-top: 30px;
-  }
-}
-
-/* Extra Small <= 576px 
-
-@media screen and (max-width: 576px) {
-  .hedaer-left {
-    display: none;
-    color:#000000
-  }
-}
- 
-#sidebarContainer {
-  width: 200px;
-  height: 100%;
-  background-color: #302c2c;
-  grid-area: sidebar;
-
-}
-
-.sidebar-title {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-}
-
-.sidebar-list {
-  list-style-type: none;
-  padding: 40;
-}
-
-.sidebar-list-item {
-  padding: 10px;
-}
-
-.content {
-  margin-left: 220px;
-  padding: 20px;
-  height: 80%;
-}
-
-
-/* styles.css 
-.layout {
-  display: flex;
-}
-
-.sidebar-open .main-content {
-  margin-left: 300px; /* Adjust this based on your sidebar width 
-}
-
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #000000;
-  border-bottom: 1px solid #000000;
-}
-
-.main-container {
-  padding: 20px;
-}
-
-.main-title {
-  margin-bottom: 20px;
-}
-
-.main-cards {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  margin: 0 10px;
-  text-align: center;
-}
-
-.card-icon {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.charts {
-  margin-top: 20px;
-}
-
-*/
-
-
 body {
   margin: 0;
   padding: 0;
-  background: rgb(0, 0, 0);
-  color: #9e9ea4;
+  background-image: url("/assets/another.jpg");
+  background-size: 100%;
+  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -377,17 +12,18 @@ body {
   line-height: 1px;
   font-size: 20px;
 }
+
 .icon_header {
   vertical-align: middle;
   line-height: 1px;
-  font-size: 26px;
+  font-size: 24px;
 }
 .icon, .icon_header {
   margin-right: 5px;
 }
 
 .close_icon {
-  color: red;
+  color: rgb(183, 29, 29);
   margin-left: 30px;
   margin-top: 10px;
   cursor: pointer;
@@ -404,26 +40,57 @@ body {
 }
 .headerContainer {
   grid-area: header;
-  height: 20px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px 0 30px;
+  padding: 5 40px 5 40px;
   box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  background:white;
 }
 
 .header-left input{
   height: 40px;
   width: 400px;
-  background: transparent;
   border: none;
   outline: none;
   font-size: 15px;
-  color: white;
+  color: rgb(255, 255, 255);
 
 }
+.icon{
+  color: #ffffff;
+
+}
+
 .header-right{
+  color: rgb(255, 255, 255);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px; /* Adjust to position below the icon */
+  right: 0;
   color: white;
+  background-color: rgb(135, 136, 169);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1; /* Ensure the dropdown appears above other content */
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 9px 15px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.dropdown-menu button:hover {
+  background-color: #737171;
 }
 
 .menu-icon {
@@ -435,10 +102,11 @@ body {
 #sidebarContainer {
   grid-area: sidebar;
   height: 100%;
-  background-color: #000000;
+  background-color: #ffffff;
   overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  
 }
 
 .sidebar-title {
@@ -468,38 +136,29 @@ body {
 .sidebar-list-item {
   padding: 20px 20px 20px 20px;
   font-size: 18px;
+  color: #18314b;
 }
 
 .sidebar-list-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(44, 37, 37, 0.2);
   cursor: pointer;
-}
-
-.sidebar-list-item > a {
-  text-decoration: none;
-  color: #9e9ea4;
+  color: #000000;
 }
 
 .sidebar-responsive {
   display: inline !important;
   position: absolute;
-  /*
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  */
   z-index: 12 !important;
 }
-
-/* End Sidebar  */
-
-
-/* Main  */  
+.icon{
+  color: #18314b;
+}
+ 
 .main-container {
   grid-area: main;
   overflow-y: auto;
   padding: 20px 20px;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(214, 214, 214, 0.95);
 }
 
 .main-title {
@@ -522,21 +181,6 @@ body {
   border-radius: 5px;
 }
 
-.card:first-child {
-  background-color: #2962ff;
-}
-
-.card:nth-child(2) {
-  background-color: #ff6d00;
-}
-
-.card:nth-child(3) {
-  background-color: #2e7d32;
-}
-
-.card:nth-child(4) {
-  background-color: #d50000;
-}
 
 .card-inner {
   display: flex;
@@ -544,9 +188,6 @@ body {
   justify-content: space-between;
 }
 
-.card-inner > .card_icon {
-  font-size: 25px;
-}
 
 .charts {
   display: grid;
@@ -596,28 +237,34 @@ body {
     margin-top: 30px;
   }
 }
-
-/* Extra Small <= 576px */
-
-
-/* App.css */
-/* Other styles */
-
 .projects-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
+
 .project-card {
+  background-color: #163755;
   padding: 20px;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h4 {
-  margin: 0 0 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
 }
 
 .project-card p {
@@ -630,15 +277,191 @@ body {
 }
 
 .status.completed {
-  background-color: #4caf50;
+  background-color: #24894c;
 }
 
 .status.in-progress {
-  background-color: #ff9800;
+  background-color: #a6a41f;
 }
 
 .status.pending {
-  background-color: #f44336;
+  background-color:#b81f31 ;
+}
+/* 
+.status.almostdone {
+  background-color: #8b114e;
+} */
+
+/* General Layout */
+.main-container {
+  padding: 15px;
+  
+}
+
+.form-container {
+  background: rgb(248, 248, 248);
+  color: #18314b;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 40%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#employee,#project,#start-date,#end-date,#proj-desc{
+  background-color: #fffefe;
+  border-color: #248989;
+  color: rgb(10, 10, 10);
+}
+
+button[type='submit'] {
+  padding: 10px 20px;
+  background-color: #1a1d4d;
+  font-weight:600;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type='submit']:hover {
+  background-color:#203c65;
+}
+
+.allocations-list {
+  background:rgb(248, 248, 248) ;
+  color: #18314b;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.allocations-list h4 {
+  margin-bottom: 20px;
+}
+
+.allocations-list ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 
+#edit{
+  padding: 3px 10px;
+  margin-right: 20px;
+  margin-top: 15px;
+  background-color: #1a1d4d;
+  font-weight:600;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#confirm{
+  padding: 3px 10px;
+  background-color: #1a1d4d;
+  font-weight:600;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.main-title{
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.main-container {
+  padding: 20px;
+}
+
+.sidebar-list-item {
+  cursor: pointer;
+}
+
+.sidebar-list-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Annual Reports */
+
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.card:first-child {
+  background-color:  #248989;
+}
+
+.card:nth-child(2) {
+  background-color: #475d75;
+}
+
+.card:nth-child(3) {
+  background-color: #0c0a38;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > .card_icon {
+  font-size: 25px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+  height: 300px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.chart-description {
+  margin-left: 20px;
+  max-width: 45%;
+  
+}
+
+.chart-description h4 {
+  margin-bottom: 10px;
+}

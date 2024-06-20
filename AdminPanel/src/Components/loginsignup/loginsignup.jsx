@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './loginsignup.css';
 
 const LoginSignup = () => {
-  const [action, setAction] = useState("Sign Up");
+  const [action, setAction] = useState("Login");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +26,7 @@ const LoginSignup = () => {
       setError("Please enter a valid email address.");
       return;
     }
-    if (!name || name.length < 2) {
+    if (action === "Sign Up" && (!name || name.length < 2)) {
       setError("Please enter a name with at least 2 characters.");
       return;
     }
@@ -34,7 +34,7 @@ const LoginSignup = () => {
       setError("Password must be 6-12 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.");
       return;
     }
-    
+
     // Reset error if validation passes
     setError("");
 
@@ -48,58 +48,73 @@ const LoginSignup = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+  const toggleAction = () => {
+    setAction(action === "Login" ? "Sign Up" : "Login");
+    setError("");
+  };
+
   return (
-    <div className='containers'>
-      <div className="header">
-        <div className="text">{action}</div>
-      </div>
-      <div className="inputs">
-        <div className="input">
-          <img src="/assets/email.png" height={35} width={35} alt="Email Icon" />
-          <input 
-            type="email" 
-            placeholder="Email" 
-            size="40" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-          />
+    <div className="container-wrapper">
+      <div className="containers">
+        <div className="header">
+          <div className="text">{action}</div>
         </div>
+        <div className="inputs">
+          <div className="input">
+            <img src="/assets/email.jpeg" height={35} width={35} alt="Email Icon" />
+            <input
+              type="email"
+              placeholder="Email"
+              size="40"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-        <div className="input">
-          <img src="/assets/person.jpeg" height={35} width={35} alt="Person Icon" />
-          <input 
-            type="text" 
-            size="40" 
-            placeholder="Name" 
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
-          />
-        </div>
+          {action === "Sign Up" && (
+            <div className="input">
+              <img src="/assets/person.jpeg" height={35} width={35} alt="Person Icon" />
+              <input
+                type="text"
+                size="40"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+          )}
 
-        <div className="input">
-          <img src="/assets/password.png" height={32} width={35} alt="Password Icon" />
-          <input 
-            type={passwordVisible ? "text" : "password"} 
-            size="40" 
-            placeholder="Password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-          />
-          <img 
-            src={passwordVisible ? "/assets/eyesopen.png" : "/assets/eyesclosed.png"} 
-            height={20} 
-            width={17} 
-            alt="Toggle Password Visibility" 
-            onClick={togglePasswordVisibility}
-            style={{ cursor: 'pointer', marginLeft: '10px' }}
-          />
+          <div className="input">
+            <img src="/assets/password.png" height={32} width={35} alt="Password Icon" />
+            <input
+              type={passwordVisible ? "text" : "password"}
+              size="40"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {/* <img 
+              src={passwordVisible ? "/assets/eyesopen.png" : "/assets/eyesclosed.png"} 
+              height={20} 
+              width={17} 
+              alt="Toggle Password Visibility" 
+              onClick={togglePasswordVisibility}
+              style={{ cursor: 'pointer', marginLeft: '10px' }}
+            /> */}
+          </div>
         </div>
-      </div>
-      {error && <div className="error-message">{error}</div>}
-      <div className="forgot-pwd">Forgot Password? <a href="">Click Here</a> </div>
-      <div className="submit-container">
-        <div className="signup" onClick={handleSubmit}>Sign Up</div>
-        <div className="login" onClick={handleSubmit}>Login</div>
+        {error && <div className="error-message">{error}</div>}
+
+        <div className="submit-container">
+          <div className="submit-button" onClick={handleSubmit}>{action}</div>
+        </div>
+        <div className="toggle-container">
+          {action === "Login" ? (
+            <p>Don't have an account? <span onClick={toggleAction} className="toggle-action">Sign Up</span></p>
+          ) : (
+            <p>Already have an account? <span onClick={toggleAction} className="toggle-action">Login</span></p>
+          )}
+        </div>
       </div>
     </div>
   );
